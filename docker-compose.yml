@@ -8,7 +8,8 @@ services:
       - 1.0.0.1
     ports:
       - 123:123/udp
-    privileged: true
     network_mode: host
     cap_add:
       - SYS_TIME
+    volumes:
+      - ./etc/chrony.conf:/etc/chrony/chrony.conf
