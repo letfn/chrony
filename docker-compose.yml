@@ -1,0 +1,14 @@
+version: '3.7'
+
+services:
+  chrony:
+    image: letfn/chrony
+    dns:
+      - 1.1.1.1
+      - 1.0.0.1
+    ports:
+      - 123:123/udp
+    privileged: true
+    network_mode: host
+    cap_add:
+      - SYS_TIME
