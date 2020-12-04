@@ -3,16 +3,16 @@ SHELL := /bin/bash
 menu:
 	@perl -ne 'printf("%10s: %s\n","$$1","$$2") if m{^([\w+-]+):[^#]+#\s(.+)$$}' Makefile
 
-build: # Build letfn/chrony
-	docker build -t letfn/chrony .
+build: # Build defn/chrony
+	podman build -t defn/chrony .
 
-push: # Push letfn/chrony
-	docker push letfn/chrony
+push: # Push defn/chrony
+	podman push defn/chrony
 
-bash: # Run bash shell with letfn/chrony
-	docker run --rm -ti --entrypoint bash letfn/chrony
+bash: # Run bash shell with defn/chrony
+	podman run --rm -ti --entrypoint bash defn/chrony
 
-exec : # Run bash shell in letfn/chrony
+exec : # Run bash shell in defn/chrony
 	docker-compose exec chrony bash
 
 clean:

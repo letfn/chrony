@@ -2,7 +2,7 @@ version: '3.7'
 
 services:
   chrony:
-    image: letfn/chrony
+    image: defn/chrony
     dns:
       - 1.1.1.1
       - 1.0.0.1
